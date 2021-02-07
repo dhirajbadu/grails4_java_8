@@ -30,7 +30,7 @@ class ParallelStreamApiService {
      * Parallelly filters the objects
      * */
     def streamFilterExample(List<ClientDTO> clientDTOList){
-        clientDTOList.parallelStream()().filter{it.firstName == "Dhiraj"}.collect(Collectors.toList())
+        clientDTOList.parallelStream().filter{it.firstName == "Dhiraj"}.collect(Collectors.toList())
     }
 
     /**
@@ -38,7 +38,7 @@ class ParallelStreamApiService {
      * anyMatch return true if any one object is matched from the list
      * */
     def streamAnyMatchExample(List<ClientDTO> clientDTOList , String match){
-        return clientDTOList.parallelStream()().anyMatch{(it.firstName.contains(match))}
+        return clientDTOList.parallelStream().anyMatch{(it.firstName.contains(match))}
     }
 
     /**
@@ -46,11 +46,11 @@ class ParallelStreamApiService {
      * anyMatch return true if all the objects are matched from the list
      * */
     def streamAllMatchExample(List<ClientDTO> clientDTOList , String match){
-        clientDTOList.parallelStream()().allMatch{it.firstName.contains(match)}
+        clientDTOList.parallelStream().allMatch{it.firstName.contains(match)}
     }
 
     def streamPaginationExample(List<ClientDTO> clientDTOList , int offset , int max){
-        clientDTOList.parallelStream()().skip(offset).limit(max).collect(Collectors.toList())
+        clientDTOList.parallelStream().skip(offset).limit(max).collect(Collectors.toList())
     }
 
 }
