@@ -28,10 +28,16 @@ class StreamApiService {
         clientDTOList.stream().filter{it.firstName == "Dhiraj"}.collect(Collectors.toList())
     }
 
+    /**
+     * anyMatch return true if any one object is matched from the list
+     * */
     def streamAnyMatchExample(List<ClientDTO> clientDTOList , String match){
         return clientDTOList.stream().anyMatch{(it.firstName.contains(match))}
     }
 
+    /**
+     * anyMatch return true if all the objects are matched from the list
+     * */
     def streamAllMatchExample(List<ClientDTO> clientDTOList , String match){
         clientDTOList.stream().allMatch{it.firstName.contains(match)}
     }
